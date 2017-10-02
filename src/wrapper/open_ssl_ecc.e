@@ -31,7 +31,7 @@ feature -- C externals
 			"return EC_GROUP_new_by_curve_name((int)$a_nid);"
 		end
 
-	c_ec_ky_set_group(a_key: POINTER; a_group: POINTER): INTEGER
+	c_ec_key_set_group(a_key: POINTER; a_group: POINTER): INTEGER
 			--/** Sets the EC_GROUP of a EC_KEY object.
 			-- *  \param  key    EC_KEY object
 			-- *  \param  group  EC_GROUP to use in the EC_KEY object (note: the EC_KEY
@@ -91,7 +91,6 @@ feature -- C externals
 			"return ECDSA_do_verify((const unsigned char *)$a_dgst, (int) $a_len, (const ECDSA_SIG *)$a_sig, (EC_KEY *)$a_key);"
 		end
 
-
 	c_ec_group_free (a_group: POINTER)
 			--/** Frees a EC_GROUP object
 			-- *  \param  group  EC_GROUP object to be freed.
@@ -103,7 +102,6 @@ feature -- C externals
 			"EC_GROUP_free((EC_GROUP *)$a_group);"
 		end
 
-
 	c_ec_key_free (a_key: POINTER)
 			--/** Frees a EC_KEY object.
 			-- *  \param  key  EC_KEY object to be freed.
@@ -114,7 +112,6 @@ feature -- C externals
 		alias
 			"EC_KEY_free((EC_KEY *)$a_key);"
 		end
-
 
 	c_ecdsa_sig_get0 (a_sig: POINTER; a_pr: POINTER; a_ps: POINTER)
 		--/** Accessor for r and s fields of ECDSA_SIG

@@ -32,7 +32,7 @@ feature {NONE} -- Initialization
 			ec_group := {OPEN_SSL_ECC}.c_ec_group_new_by_curve_name ({OBJ_MAC_CONSTANTS}.nid_secp192k1)
 			check not_null_ec_group: ec_group /= default_pointer end
 
-			group_status := {OPEN_SSL_ECC}.c_ec_ky_set_group (ec_key, ec_group)
+			group_status := {OPEN_SSL_ECC}.c_ec_key_set_group (ec_key, ec_group)
 			check success: group_status = 1 end
 
 			status := {OPEN_SSL_ECC}.c_ec_key_generate_key (ec_key)
