@@ -1,0 +1,7 @@
+EIFGENs
+*.swp
+*.log*
+*.rc
+*.bak
+.*.swo
+Thumbs.db
